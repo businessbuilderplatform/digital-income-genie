@@ -1,91 +1,93 @@
-/* General Styles */
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  line-height: 1.6;
-  color: #333;
+:root{
+  --brand-blue: #1E3A8A;
+  --brand-gold: #FACC15;
+  --bg: #F9FAFB;
+  --text: #111827;
+  --muted: #6B7280;
+  --card: #FFFFFF;
+  --max-width: 1100px;
 }
 
-/* Hero Section */
-header.hero {
-  background: linear-gradient(135deg, #6a11cb, #2575fc);
-  color: white;
-  text-align: center;
-  padding: 80px 20px;
-}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;color:var(--text);background:var(--bg);-webkit-font-smoothing:antialiased}
+.wrap{max-width:var(--max-width);margin:0 auto;padding:0 20px}
 
-header.hero h1 {
-  font-size: 3em;
-  margin: 0;
-}
+/* Header */
+.site-header{background:linear-gradient(90deg,var(--brand-blue),#2653b3);color:#fff;position:sticky;top:0;z-index:40;box-shadow:0 2px 8px rgba(6,8,15,0.06)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+.logo{display:flex;align-items:center;gap:12px;color:#fff;text-decoration:none}
+.logo svg{display:block}
+.brand{font-weight:700;font-size:18px;letter-spacing:0.2px}
+.nav a{color:rgba(255,255,255,0.95);text-decoration:none;margin-left:18px;font-weight:600}
 
-header.hero p {
-  font-size: 1.2em;
-  margin: 10px 0 20px;
-}
+/* Hero */
+.hero{padding:48px 0;background:linear-gradient(180deg, rgba(255,255,255,0.04), transparent)}
+.hero-inner{display:flex;gap:30px;align-items:center;flex-wrap:wrap}
+.hero-copy{flex:1;min-width:260px}
+.hero h1{font-size:32px;margin:0 0 12px;color:var(--brand-blue)}
+.lead{font-size:18px;color:var(--muted);margin:0 0 18px}
+.cta-row{display:flex;gap:12px;margin-bottom:8px}
+.btn{display:inline-block;padding:10px 16px;border-radius:8px;border:0;text-decoration:none;cursor:pointer;font-weight:700}
+.btn.primary{background:var(--brand-gold);color:#073243}
+.btn.outline{background:transparent;color:var(--brand-blue);border:2px solid rgba(30,58,138,0.12)}
 
-.btn {
-  background: white;
-  color: #2575fc;
-  padding: 10px 20px;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 5px;
-}
+/* hero art */
+.hero-art{flex:0 0 300px}
+.stat-card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 6px 20px rgba(16,24,40,0.06);text-align:center}
+.stat-number{font-weight:700;color:var(--brand-blue);font-size:16px}
+.stat-desc{color:var(--muted);margin-top:8px;font-size:14px}
 
 /* Sections */
-section {
-  padding: 40px 20px;
-  max-width: 900px;
-  margin: auto;
+.section{padding:40px 0}
+.section h2{color:var(--brand-blue);margin:0 0 12px;font-size:22px}
+.intro{color:var(--muted);margin:0 0 18px}
+
+/* Grid */
+.grid{display:grid;gap:18px}
+.grid-3{grid-template-columns:repeat(3,1fr)}
+.grid-2{grid-template-columns:repeat(2,1fr)}
+
+@media (max-width:900px){
+  .grid-3{grid-template-columns:repeat(1,1fr)}
+  .grid-2{grid-template-columns:repeat(1,1fr)}
 }
 
-h2 {
-  color: #2575fc;
-  margin-bottom: 20px;
-}
+/* Cards */
+.card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(16,24,40,0.04)}
+.mt{margin-top:18px}
 
-/* Why Choose Us */
-ul {
-  list-style: none;
-  padding: 0;
-}
+/* Pricing */
+.price-card{background:var(--card);padding:18px;border-radius:12px;border:1px solid rgba(16,24,40,0.04);text-align:center}
+.price-card.featured{border:2px solid rgba(250,204,21,0.18);box-shadow:0 10px 30px rgba(30,58,138,0.04)}
+.price{font-size:20px;font-weight:800;color:var(--brand-blue;margin:0)}
+.price span{font-size:12px;font-weight:600;color:var(--muted)}
 
-ul li {
-  background: #f4f4f4;
-  margin: 10px 0;
-  padding: 10px;
-  border-radius: 5px;
-}
+/* Steps */
+.steps{list-style:none;padding:0;margin:0}
+.steps li{background:var(--card);padding:14px;border-radius:10px;margin-bottom:10px;border-left:4px solid var(--brand-gold)}
 
-/* Demo Options */
-.demo {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
+/* Contact area */
+.contact-card, .form-card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(16,24,40,0.04)}
+.contact-line a{color:var(--brand-blue);text-decoration:none;font-weight:600}
+.small-note{color:var(--muted);font-size:13px;margin-top:8px}
 
-.demo-box {
-  flex: 1;
-  min-width: 250px;
-  background: #f9f9f9;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-/* Contact Section */
-.contact {
-  background: #f0f0f0;
-  text-align: center;
-}
+/* Form */
+label{display:block;margin:8px 0 6px;font-weight:600;color:var(--muted);font-size:13px}
+input,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #e6e9ef;background:white;font-size:14px}
+textarea{resize:vertical}
+.form-actions{display:flex;gap:10px;margin-top:12px}
+.btn.paypal{background:var(--brand-blue);color:white;padding:10px 14px;border-radius:8px;text-decoration:none;display:inline-block}
 
 /* Footer */
-footer {
-  background: #333;
-  color: white;
-  text-align: center;
-  padding: 20px;
-  margin-top: 20px;
+.site-footer{padding:20px 0;background:#0f1724;color:#fff;margin-top:28px}
+.footer-inner{display:flex;justify-content:space-between;align-items:center}
+.footer-right a{color:rgba(255,255,255,0.9);text-decoration:none;margin-left:12px;font-weight:600}
+.footer-left .tiny{color:#cbd5e1;font-size:13px;margin-top:6px}
+
+/* responsive tweaks */
+@media (max-width:720px){
+  .header-inner{padding:10px}
+  .hero h1{font-size:26px}
+  .hero-art{display:none}
+  .nav{display:none}
 }
